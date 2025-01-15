@@ -6,6 +6,9 @@ import lombok.Getter;
 public class UserPointResponse {
 
     private Long userId;
-    private Long pointAmount;
+    private long pointAmount;
 
+    public UserPointResponse(Long userId){
+        this.userId = userId;
+    }
 }
