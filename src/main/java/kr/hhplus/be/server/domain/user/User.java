@@ -1,8 +1,12 @@
 package kr.hhplus.be.server.domain.user;
 
 import jakarta.persistence.*;
+import kr.hhplus.be.server.domain.user.user_coupon.UserCoupon;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Entity
@@ -19,6 +23,9 @@ public class User {
 
     @ColumnDefault("0")
     private long pointAmount;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<UserCoupon> userCoupons = new HashSet<>();
 
     @Builder
     public User(Long userId, String userName, long pointAmount) {

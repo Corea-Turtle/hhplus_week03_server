@@ -2,13 +2,11 @@ package kr.hhplus.be.server.domain.product;
 
 import jakarta.transaction.Transactional;
 import kr.hhplus.be.server.infrastructure.product.ProductJpaRepository;
-import kr.hhplus.be.server.interfaces.dto.product.ProductResponse;
-import org.assertj.core.api.Assertions;
+import kr.hhplus.be.server.interfaces.dto.product.response.ProductResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.testcontainers.shaded.org.checkerframework.checker.units.qual.A;
 
 import static org.junit.jupiter.api.Assertions.*;
 

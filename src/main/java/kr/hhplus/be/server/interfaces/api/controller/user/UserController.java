@@ -15,9 +15,10 @@ public class UserController {
     private final UserService userService;
 
     //(포인트) 잔액 조회
-    @GetMapping("/{userId}/point")
-    public long getCurrentPointAmount(@RequestBody UserPointResponse response){
-       return userService.getCurrentPointAmount(response);
+    @GetMapping("/point/{userId}")
+    public long getCurrentPointAmount(@PathVariable Long userId){
+        UserPointResponse response = new UserPointResponse(userId);
+        return userService.getCurrentPointAmount(response);
     }
 
     //(포인트) 충전

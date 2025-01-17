@@ -1,6 +1,5 @@
-package kr.hhplus.be.server.interfaces.dto.product;
+package kr.hhplus.be.server.interfaces.dto.product.response;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -13,8 +12,5 @@ public class ProductResponse {
     private int productPrice;
     private int remainQuantity;
 
-    @Builder
-    public ProductResponse(Long productId) {
 
-    }
 }
