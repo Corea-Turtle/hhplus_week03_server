@@ -1,16 +1,14 @@
 package kr.hhplus.be.server.interfaces.dto.coupon.request;
 
-import jakarta.persistence.Column;
+
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import kr.hhplus.be.server.domain.coupon.CouponType;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.Setter;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -19,7 +17,7 @@ public class CouponCreateRequest {
     private CouponType type;
     private double valueOfType;
     private int remainQuantity;
-    private SimpleDateFormat expiredDate = null;
-    private SimpleDateFormat createDate;
+    private LocalDate expiredDate = null;
+    private LocalDate createDate;
 
 }

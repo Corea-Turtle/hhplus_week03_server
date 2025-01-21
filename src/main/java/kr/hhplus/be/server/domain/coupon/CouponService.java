@@ -1,13 +1,12 @@
 package kr.hhplus.be.server.domain.coupon;
 
-import kr.hhplus.be.server.domain.user.user_coupon.UserCoupon;
 import kr.hhplus.be.server.infrastructure.coupon.CouponJpaRepository;
 import kr.hhplus.be.server.interfaces.dto.coupon.request.CouponCreateRequest;
 import kr.hhplus.be.server.interfaces.dto.coupon.request.CouponUpdateRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -33,10 +32,9 @@ public class CouponService {
         couponRepository.save(coupon);
     }
 
-    //유저 아이디에 해당하는 모든 쿠폰 조회에서는 userId로 List - entity manyToMany에서는 Set
-    public List<Coupon> selectCouponListByCouponId(UserCoupon userCoupon){
-        Long userId = userCoupon.getUser().getUserId();
-        return couponRepository.findAllByUserId(userId);
+    //쿠폰 조회
+    public Optional<Coupon> getCouponById(Long couponId){
+        Optional<Coupon> coupon = couponRepository.findById(couponId);
+        return coupon;
     }
-
 }

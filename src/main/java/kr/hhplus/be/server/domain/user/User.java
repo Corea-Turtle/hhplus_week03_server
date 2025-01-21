@@ -1,7 +1,8 @@
 package kr.hhplus.be.server.domain.user;
 
 import jakarta.persistence.*;
-import kr.hhplus.be.server.domain.user.user_coupon.UserCoupon;
+import kr.hhplus.be.server.domain.coupon.Coupon;
+import kr.hhplus.be.server.domain.usercoupon.UserCoupon;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -16,7 +17,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
     @Column(length = 255)
     private String userName;
@@ -28,8 +29,8 @@ public class User {
     private Set<UserCoupon> userCoupons = new HashSet<>();
 
     @Builder
-    public User(Long userId, String userName, long pointAmount) {
-        this.userId = userId;
+    public User(Long id, String userName, long pointAmount) {
+        this.id = id;
         this.userName = userName;
         this.pointAmount = pointAmount;
     }
@@ -41,5 +42,9 @@ public class User {
 
     public void updatePoint(long pointAmount){
         this.pointAmount = pointAmount;
+    }
+
+    public void addUserCoupon(User user, Coupon coupon) {
+        userCoupons.add(new UserCoupon(user, coupon));
     }
 }

@@ -28,7 +28,7 @@ class ProductServiceTest {
         Product product = new Product("상품1", 1000, 10);
         productRepository.save(product);
 
-        ProductResponse response = new ProductResponse(product.getProductId());
+        ProductResponse response = new ProductResponse();
 
         //when - 상품 조회
         Product productFound = productService.getProductDetail(response);
