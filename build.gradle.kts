@@ -49,12 +49,17 @@ dependencies {
 	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.testcontainers:mysql")
 	testImplementation("org.springframework.boot:spring-boot-starter-validation")
+	//Redis
+	testImplementation("org.springframework.boot:spring-boot-starter-data-redis")
+	testImplementation("org.redisson:redisson-spring-boot-starter:3.17.0")
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
 	// lombok
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
+
+
 }
 
 tasks.withType<Test> {

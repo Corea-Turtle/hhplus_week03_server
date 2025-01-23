@@ -88,7 +88,7 @@ class LimitedCouponIssueFacadeTest {
         assertEquals("이미 해당 쿠폰을 가지고 있습니다.", exception.getMessage());
     }
 
-    @DisplayName("선착순 할인 쿠폰을 특정 유저에게 발행한다. 유저에게 해당 쿠폰이 없으면 발행 성공")
+    @DisplayName("선착순 할인 쿠폰을 특정 유저에게 발행한다. 유저에게 해당 쿠폰이 없으면 발행 성공시킨다.")
     @Test
     void issuelimitedCouponU() {
         //given

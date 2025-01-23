@@ -31,6 +31,8 @@ public class UserCouponRepositoryImpl implements UserCouponRepository {
         userCouponJpaRepository.save(userCoupon);
     }
 
+
+
     public List<UserCoupon> findAllByUser(User user){
         return userCouponJpaRepository.findAllByUser(user);
     }

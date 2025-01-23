@@ -1,5 +1,6 @@
 package kr.hhplus.be.server.domain.usercoupon;
 
+import kr.hhplus.be.server.domain.coupon.Coupon;
 import kr.hhplus.be.server.domain.user.User;
 import kr.hhplus.be.server.infrastructure.usercoupon.UserCouponJpaRepository;
 import kr.hhplus.be.server.infrastructure.usercoupon.UserCouponRepositoryImpl;
@@ -20,7 +21,11 @@ public class UserCouponService {
     private final UserCouponRepositoryImpl userCouponRepositoryImpl;
 
     public List<UserCoupon> getCouponsUserHave(User user) {
-
         return userCouponRepositoryImpl.findAllByUser(user);
+    }
+
+    public void saveCouponAndUser(User user, Coupon coupon){
+        UserCoupon userCoupon = new UserCoupon(user, coupon);
+        userCouponRepositoryImpl.save(userCoupon);
     }
 }

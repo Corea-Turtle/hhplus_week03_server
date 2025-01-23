@@ -40,7 +40,9 @@ public class LimitedCouponIssueFacade {
         coupon.checkCouponRemainQuantity(coupon.getId());
 
         //3.쿠폰 발급(동시성 처리)
-        user.addUserCoupon(user, coupon);
+
+
+        userCouponService.saveCouponAndUser(user,coupon);
 
     }
 
