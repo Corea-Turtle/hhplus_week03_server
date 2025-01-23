@@ -1,4 +1,7 @@
-## 프로젝트
+## e-commerce 프로젝트
+
+## [STEP11]동시성 이슈 관련 문서 링크
+https://c-turtle-makes-program.tistory.com/12
 
 ## Getting Started
 
@@ -11,3 +14,4 @@
 ```bash
 docker-compose up -d
 ```
+
