@@ -24,7 +24,7 @@ public class UserService {
     //유저 포인트 추가 감소
     public void updatePointAmountById(UserPointUpdateRequest request) {
         //1.유저 존재 확인
-        User user = userJpaRepository.findById(request.getUserId())
+        User user = userJpaRepository.findById(request.getId())
                 .orElseThrow(()->new IllegalArgumentException("유저가 존재하지 않습니다."));
 
         //2.dto의 updateAmount와 currentPoint를 비교하여 정책에 어긋나면 Exception

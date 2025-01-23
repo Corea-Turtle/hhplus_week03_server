@@ -9,13 +9,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserPointUpdateRequest {
 
-    private Long userId;
+    private Long id;
     private int updateAmount;
     private boolean pointState; //true이면 증가 false면 감소;
 
     @Builder
-    public UserPointUpdateRequest(Long userId, int updateAmount, boolean pointState){
-        this.userId = userId;
+    public UserPointUpdateRequest(Long Id, int updateAmount, boolean pointState){
+        this.id = id;
         this.updateAmount = updateAmount;
         this.pointState = pointState;
     }
